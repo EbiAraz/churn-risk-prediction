@@ -1,0 +1,15 @@
+{
+  "has_gpu": false,
+  "best_threshold": 0.8511441946029663,
+  "baseline_loss": 0.19592688977718353,
+  "baseline_accuracy": 0.9316666722297668,
+  "baseline_precision": 0.8535353541374207,
+  "baseline_recall": 0.9337016344070435,
+  "baseline_auc": 0.9701341390609741,
+  "baseline_pr_auc": 0.9654200077056885,
+  "tuned_accuracy": 0.95,
+  "tuned_precision": 0.9467455621301775,
+  "tuned_recall": 0.8839779005524862,
+  "tuned_f1": 0.9142857142857143,
+  "roc_auc": 0.9690924194675563
+}

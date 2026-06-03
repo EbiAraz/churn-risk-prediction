@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Model Artifacts Report</title>
+    <style>
+        :root {
+            --bg: #f7f6f2;
+            --card: #ffffff;
+            --ink: #1f2937;
+            --muted: #5b6470;
+            --line: #d8dee8;
+            --brand: #264653;
+            --accent: #2a9d8f;
+        }
+        body { margin: 0; font-family: Segoe UI, Tahoma, sans-serif; background: linear-gradient(130deg, #f7f6f2, #e6f2ef); color: var(--ink); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 28px 18px 44px; }
+        .hero { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; box-shadow: 0 8px 20px rgba(38,70,83,0.08); }
+        .hero h1 { margin: 0 0 8px; color: var(--brand); }
+        .hero p { margin: 0; color: var(--muted); }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+        .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+        .card h2 { margin: 0 0 10px; font-size: 18px; color: var(--brand); }
+        .card ul { margin: 0; padding-left: 20px; }
+        a { color: var(--brand); text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; }
+        th, td { border-bottom: 1px solid var(--line); text-align: left; padding: 10px 8px; vertical-align: top; }
+        th { color: var(--muted); font-weight: 700; }
+        .footer { margin-top: 14px; color: var(--muted); font-size: 13px; }
+        @media (max-width: 840px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>Unified Model Artifacts Report</h1>
+            <p>Single entry point for dashboards, exported files, and quick run commands.</p>
+        </section>
+
+        <section class="grid">
+            <article class="card">
+                <h2>Key Metrics</h2>
+                <ul>
+                    <li><b>baseline_accuracy</b>: 0.9317</li><li><b>baseline_auc</b>: 0.9701</li><li><b>baseline_pr_auc</b>: 0.9654</li><li><b>best_threshold</b>: 0.8511</li><li><b>tuned_accuracy</b>: 0.9500</li><li><b>tuned_precision</b>: 0.9467</li><li><b>tuned_recall</b>: 0.8840</li><li><b>tuned_f1</b>: 0.9143</li>
+                </ul>
+            </article>
+            <article class="card">
+                <h2>Quick Commands</h2>
+                <ul>
+                    <li>Run training pipeline: python Confusion-Matrix.py</li>
+                    <li>Run threshold app: python Confusion-Matrix.py --run-threshold-app</li>
+                    <li>Rebuild this report only: python Confusion-Matrix.py --build-report-only</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+            <h2>Artifacts</h2>
+            <table>
+                <thead>
+                    <tr><th>Item</th><th>Status</th><th>File</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Main Dashboard</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="model_dashboard_plotly.html" target="_blank">model_dashboard_plotly.html</a></td><td>Interactive training + ROC + threshold visualizations</td></tr>
+<tr><td>K-Fold Dashboard</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="kfold_dashboard_plotly.html" target="_blank">kfold_dashboard_plotly.html</a></td><td>Cross-validation fold and distribution view</td></tr>
+<tr><td>SHAP Dashboard</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="shap_feature_importance_plotly.html" target="_blank">shap_feature_importance_plotly.html</a></td><td>Feature importance explainability chart</td></tr>
+<tr><td>Threshold App</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="threshold_dashboard_app.py" target="_blank">threshold_dashboard_app.py</a></td><td>Interactive Dash app with threshold slider</td></tr>
+<tr><td>Predictions CSV</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="test_predictions.csv" target="_blank">test_predictions.csv</a></td><td>Final test predictions and labels</td></tr>
+<tr><td>Metrics JSON</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="metrics_summary.json" target="_blank">metrics_summary.json</a></td><td>Summary metrics in machine-readable format</td></tr>
+<tr><td>Threshold Sweep CSV</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="threshold_sweep.csv" target="_blank">threshold_sweep.csv</a></td><td>Metrics at different decision thresholds</td></tr>
+<tr><td>Training History CSV</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="training_history.csv" target="_blank">training_history.csv</a></td><td>Epoch-level model training metrics</td></tr>
+<tr><td>K-Fold CSV</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="kfold_metrics.csv" target="_blank">kfold_metrics.csv</a></td><td>Per-fold CV metrics</td></tr>
+<tr><td>SHAP CSV</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="shap_feature_importance.csv" target="_blank">shap_feature_importance.csv</a></td><td>Mean absolute SHAP values by feature</td></tr>
+<tr><td>Best Model</td><td style='color:#2A9D8F;font-weight:600'>Available</td><td><a href="best_model.keras" target="_blank">best_model.keras</a></td><td>Best checkpoint saved by validation loss</td></tr>
+                </tbody>
+            </table>
+            <div class="footer">Generated by Confusion-Matrix.py in the same directory as this report.</div>
+        </section>
+    </div>
+</body>
+</html>
