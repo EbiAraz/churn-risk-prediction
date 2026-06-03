@@ -66,6 +66,24 @@ python "churn prediction.py" --build-report-only
 python "churn prediction.py" --run-threshold-app
 ```
 
+## GitHub Push Syntax
+
+From the project folder, run:
+
+```bash
+cd "C:/Users/Ebi_Mahmdli/Desktop/churn-prediction-model"
+git branch -M main
+git remote add origin https://github.com/<your-username>/<your-repo>.git
+git push -u origin main
+```
+
+If remote `origin` already exists, use:
+
+```bash
+git remote set-url origin https://github.com/<your-username>/<your-repo>.git
+git push -u origin main
+```
+
 ## Open Artifacts
 
 Start with `model_artifacts_report.html` and use:
