@@ -6,7 +6,7 @@ AI-focused developer building practical machine learning systems with explainabi
 
 ---
 
-## 🚀 Featured Project: Churn Risk Prediction
+## 🚀 Churn Risk Prediction
 
 End-to-end customer churn prediction pipeline with deep learning, threshold optimization, SHAP explainability, and dashboard-based reporting.
 
