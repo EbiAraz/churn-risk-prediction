@@ -1,31 +1,23 @@
-# Hi, I'm Ebi Araz 👋
+# Churn Risk Prediction
 
-## 👨‍💻 About Me
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00)
+![Plotly](https://img.shields.io/badge/Plotly-Interactive-3D9970)
+![Dash](https://img.shields.io/badge/Dash-App-1F77B4)
+![Status](https://img.shields.io/badge/Model-Ready-success)
 
-AI-focused developer building practical machine learning systems with explainability, evaluation rigor, and interactive analytics.
+End-to-end customer churn prediction system with neural network training, threshold optimization, explainability, and interactive dashboards.
 
----
+## What This Project Does
 
-## 🚀 Churn Risk Prediction
+- Predicts customer churn probability from tabular features.
+- Optimizes decision threshold for stronger precision/recall tradeoff.
+- Evaluates with ROC, PR, confusion matrix, and threshold sweeps.
+- Runs K-fold validation and exports aggregate fold analytics.
+- Produces SHAP feature importance for model explainability.
+- Generates a unified artifact report page for one-click navigation.
 
-End-to-end customer churn prediction pipeline with deep learning, threshold optimization, SHAP explainability, and dashboard-based reporting.
-
-![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-Interactive-3D9970?style=for-the-badge&logo=plotly&logoColor=white)
-![Dash](https://img.shields.io/badge/Dash-App-1F77B4?style=for-the-badge&logo=plotly&logoColor=white)
-![Status](https://img.shields.io/badge/Model-Ready-success?style=for-the-badge)
-
-### ✅ What This Project Delivers
-
-- Customer churn probability predictions from tabular features
-- Threshold tuning for improved precision/recall trade-off
-- ROC/PR/confusion-matrix evaluation and threshold sweeps
-- K-fold validation with aggregate fold analytics
-- SHAP-based feature importance for interpretability
-- Unified artifact report for quick navigation
-
-### 📊 Latest Snapshot
+## Latest Snapshot
 
 - Baseline Accuracy: 0.9317
 - Baseline ROC AUC: 0.9701
@@ -34,40 +26,50 @@ End-to-end customer churn prediction pipeline with deep learning, threshold opti
 - Tuned Accuracy: 0.9500
 - Tuned F1: 0.9143
 
-Source: `metrics_summary.json`
+Source: metrics_summary.json
 
----
+## Dashboard Previews
 
-## 🖼️ Dashboard Previews
+Main evaluation dashboard:
 
-### Main Evaluation Dashboard
 ![Main Dashboard](assets/main-dashboard.png)
 
-### K-Fold Validation Dashboard
+K-fold cross-validation dashboard:
+
 ![KFold Dashboard](assets/kfold-dashboard.png)
 
-### SHAP Feature Importance Dashboard
+SHAP feature importance dashboard:
+
 ![SHAP Dashboard](assets/shap-dashboard.png)
 
----
+## Quick Start
 
-## ⚙️ Quick Start
+1. Create and activate a Python environment.
+2. Install dependencies.
 
 ```bash
 pip install -r requirements.txt
+```
+
+3. Run full training + export pipeline.
+
+```bash
 python "churn prediction.py"
 ```
 
-Optional commands:
+4. Rebuild only the unified report.
 
 ```bash
 python "churn prediction.py" --build-report-only
+```
+
+5. Launch threshold simulator app.
+
+```bash
 python "churn prediction.py" --run-threshold-app
 ```
 
----
-
-## 📦 Artifacts Included
+## Artifacts Included
 
 - churn prediction.py
 - threshold_dashboard_app.py
@@ -83,9 +85,35 @@ python "churn prediction.py" --run-threshold-app
 - test_predictions.csv
 - best_model.keras
 
----
+## GitHub Push Syntax
 
-## 📝 Notes
+```bash
+cd "C:/Users/Ebi_Mahmdli/Desktop/churn-prediction-model"
+git branch -M main
+git remote add origin https://github.com/<your-username>/<your-repo>.git
+git push -u origin main
+```
 
-- If `customer_data.csv` is missing, synthetic data is generated automatically.
+If origin already exists:
+
+```bash
+git remote set-url origin https://github.com/<your-username>/<your-repo>.git
+git push -u origin main
+```
+
+## Release
+
+Planned release: v1.0.0
+
+This release contains:
+
+- Full churn model pipeline
+- Plotly dashboards and SHAP outputs
+- Dash threshold app
+- Unified artifact report
+- Documentation and CI workflow
+
+## Notes
+
+- If customer_data.csv is missing, synthetic data is generated automatically.
 - On native Windows with TensorFlow >= 2.11, training usually runs on CPU unless using WSL2 or DirectML.
